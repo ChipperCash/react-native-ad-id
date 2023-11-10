@@ -6,7 +6,7 @@ const LINKING_ERROR =
   '- You rebuilt the app after installing the package\n' +
   '- You are not using Expo Go\n';
 
-  const AdIdentifier = NativeModules.RNAdvertisingId
+const AdIdentifier = NativeModules.RNAdvertisingId
   ? NativeModules.RNAdvertisingId
   : new Proxy(
       {},

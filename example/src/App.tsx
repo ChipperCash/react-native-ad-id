@@ -14,7 +14,7 @@ export default function App() {
 
   React.useEffect(() => {
     getAdvertisingId().then((res) => {
-      console.log({res})
+      console.log({ res });
       setAdvertisingId(res.advertisingId);
       setIsLimitAdTrackingEnabled(res.isLimitAdTrackingEnabled);
     });
@@ -23,7 +23,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Text>Advert Id: {advertisingId}</Text>
-      <Text>Tracking Enabled: {isLimitAdTrackingEnabled ? 'YES': 'NO'}</Text>
+      <Text>Tracking Enabled: {isLimitAdTrackingEnabled ? 'YES' : 'NO'}</Text>
     </View>
   );
 }
