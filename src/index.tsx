@@ -1,13 +1,13 @@
 import { NativeModules, Platform } from 'react-native';
 
 const LINKING_ERROR =
-  `The package 'react-native-ad-id' doesn't seem to be linked. Make sure: \n\n` +
+  `The package 'react-native-testing-testing' doesn't seem to be linked. Make sure: \n\n` +
   Platform.select({ ios: "- You have run 'pod install'\n", default: '' }) +
   '- You rebuilt the app after installing the package\n' +
   '- You are not using Expo Go\n';
 
-const AdId = NativeModules.AdId
-  ? NativeModules.AdId
+  const AdIdentifier = NativeModules.RNAdvertisingId
+  ? NativeModules.RNAdvertisingId
   : new Proxy(
       {},
       {
@@ -17,6 +17,9 @@ const AdId = NativeModules.AdId
       }
     );
 
-export function multiply(a: number, b: number): Promise<number> {
-  return AdId.multiply(a, b);
+export function getAdvertisingId(): Promise<{
+  advertisingId: string;
+  isLimitAdTrackingEnabled: boolean;
+}> {
+  return AdIdentifier.getAdvertisingId();
 }
