@@ -25,6 +25,8 @@ import java.util.concurrent.ExecutorService;
 public class AdIdModule extends ReactContextBaseJavaModule {
   public static final String NAME = "RNAdvertisingId";
 
+  private final ExecutorService executorService;
+
   public AdIdModule(ReactApplicationContext reactContext) {
     super(reactContext);
     this.executorService = Executors.newSingleThreadExecutor();
@@ -48,7 +50,7 @@ public class AdIdModule extends ReactContextBaseJavaModule {
           Context context = getReactApplicationContext();
           Info adInfo = AdvertisingIdClient.getAdvertisingIdInfo(context);
           boolean isLimitAdTrackingEnabled = adInfo.isLimitAdTrackingEnabled();
-          String advertisingId = isLimitAtTrackingEnabled ? "" : adInfo.getId();
+          String advertisingId = isLimitAdTrackingEnabled ? "" : adInfo.getId();
 
           WritableMap map = Arguments.createMap();
           map.putString("advertisingId", advertisingId);
