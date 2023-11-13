@@ -1,6 +1,6 @@
 {
   "name": "react-native-ad-id",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A React Native module for accessing device advertising IDs with support for iOS and Android platforms.",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
