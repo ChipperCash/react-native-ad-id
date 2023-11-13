@@ -82,6 +82,6 @@ dependencies {
   // For > 0.71, this will be replaced by `com.facebook.react:react-android:$version` by react gradle plugin
   //noinspection GradleDynamicVersion
   implementation "com.facebook.react:react-native:+"
-  implementation 'com.google.android.gms:play-services-ads:22.5.0'
+  implementation "com.google.android.gms:play-services-ads:21.0.0"
 }
 
