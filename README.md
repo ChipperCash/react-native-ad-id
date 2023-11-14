@@ -8,14 +8,24 @@ A React Native module for accessing device advertising IDs with support for iOS 
 npm install react-native-ad-id
 ```
 
+It should autolink for android. You can then navigate to your iOS folder and do
+
+```sh
+pod install
+```
+
 ## Usage
 
 ```js
-import { multiply } from 'react-native-ad-id';
+import { getAdvertisingId } from 'react-native-ad-id'
 
 // ...
 
-const result = await multiply(3, 7);
+try {
+    const { advertisingId, isLimitAdTrackingEnabled } = await getAdvertisingId()
+} catch (error) {
+    console.log('Unable to get advertising Id', error)
+}
 ```
 
 ## Contributing
